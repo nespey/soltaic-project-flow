@@ -1,0 +1,6 @@
+.vercel
+node_modules
+outputs
+work
+*.py
+.DS_Store
