@@ -30,8 +30,8 @@ const nodes = [
       {
         title: "What The Form Captures",
         items: [
-          "Project name, four-digit project number, site address, utility, contact basics, and customer/host information.",
-          "Power user, referral partner, EPC path, system-owner path, buyer path, and current decision-maker when known.",
+          "Working project name or opportunity name, site address if known, utility, contact basics, and customer/host information.",
+          "Power user, referral partner, EPC path, system-owner path, buyer path, and current decision-maker when known or suspected.",
           "Project type: PPA, cash, grant, roof, ground, carport, mixed, battery, no battery, or phased build.",
           "Early technical facts: estimated system size, production, mounting type, battery status, utility/interconnection notes, and visible site constraints."
         ]
@@ -40,7 +40,7 @@ const nodes = [
         title: "Why It Exists",
         items: [
           "It keeps the first project record from becoming scattered across Slack, Gmail, WhatsApp, portal messages, and memory.",
-          "It gives CRM enough structure to show what kind of project this is, who is involved, what is missing, and what branch should move next.",
+          "It gives CRM enough structure to create the deal, assign or confirm the four-digit project number, and show what branch should move next.",
           "Don’s automation is tied to this intake path, so agents can monitor the same structured starting point instead of chasing informal updates."
         ]
       },
@@ -56,7 +56,7 @@ const nodes = [
       {
         title: "Exit Condition",
         items: [
-          "The intake step is done when the CRM deal can be created or updated, the Drive folder can be linked, and the first known/missing answer set is visible."
+          "The intake step is done when the CRM deal can be created or updated, the project number can be assigned in CRM, the Drive folder can be created or linked, and the first known/missing answer set is visible."
         ]
       }
     ],
@@ -75,7 +75,7 @@ const nodes = [
       {
         title: "CRM Must Show",
         items: [
-          "Deal name, four-digit project number, stage, attention status, next action, next action date, blocker, and current owner.",
+          "Deal name, CRM-assigned four-digit project number, stage, attention status, next action, next action date, blocker, and current owner.",
           "Project Quick Reference: power user, referral partner, customer/host, EPC company/contact, system owner or buyer path, project size, production, mounting, battery, site address, and target completion.",
           "Commercial facts that matter for the deal type: PPA rate, term, signature status, buyer status, CLA/draw path, financial model status, and open cash/model inputs.",
           "A short note explaining what changed, what is still needed, and who owns it."
@@ -84,7 +84,7 @@ const nodes = [
       {
         title: "Drive Must Hold",
         items: [
-          "A standardized project folder that matches the CRM deal name and four-digit project number.",
+          "A standardized project folder created from or renamed to match the CRM deal name and assigned four-digit project number.",
           "PPA, CLA/funding files, model, design/proposal, site documents, utility evidence, EPC agreement, signature packet, and closeout files.",
           "Useful email, Slack, portal, and WhatsApp attachments saved into the right project folder when they become source material."
         ]
@@ -119,6 +119,7 @@ const nodes = [
       {
         title: "Business Checklist",
         items: [
+          "CRM deal exists with the assigned four-digit project number and matching Drive folder.",
           "Power user is identified or marked open with owner.",
           "Customer/host and site address are identified or marked open with owner.",
           "Referral partner/source is identified or marked none after review.",
@@ -164,7 +165,7 @@ const nodes = [
       {
         title: "What Gets Accepted",
         items: [
-          "CRM handoff note and current Project Quick Reference.",
+          "CRM handoff note, assigned project number, and current Project Quick Reference.",
           "Drive folder with current source files.",
           "Known project size, mounting, production, customer/host, power user, EPC path, buyer/system-owner path, and open blockers.",
           "Known commercial and technical assumptions that must be respected."
@@ -182,7 +183,7 @@ const nodes = [
       {
         title: "How It Is Tracked",
         items: [
-          "Each four-digit project in Zoho Projects uses the EPC/engineering structure and starts at the handoff point.",
+          "After handoff, each numbered project in Zoho Projects uses the EPC/engineering structure and starts at the handoff point.",
           "Tasks move through open, in progress, waiting, complete, or blocked status.",
           "Delegation can happen inside the lane, but status must stay visible in Zoho Projects and tied back to CRM."
         ]
@@ -379,7 +380,7 @@ function App() {
           <p className="eyebrow">Soltaic Project Flow</p>
           <h1>Intake to CRM, handoff to EPC + engineering, return to CRM.</h1>
           <p>
-            One control path for numbered projects: facts enter once, source files stay linked, execution is managed in Projects, and the final record lands back in CRM.
+            One control path: raw intake becomes a numbered CRM record, source files stay linked, execution is managed in Projects, and the final record lands back in CRM.
           </p>
         </div>
         <div className="control-card">
@@ -434,7 +435,7 @@ function App() {
 
       <footer>
         <FolderOpen size={16} />
-        <span>Intake, CRM, Drive, Zoho Projects, financials, and closeout stay tied to the same numbered project.</span>
+        <span>Intake, CRM, Drive, Zoho Projects, financials, and closeout stay tied to the CRM-assigned project number.</span>
       </footer>
 
       <Modal item={openItem} onClose={() => setOpenItem(null)} />
