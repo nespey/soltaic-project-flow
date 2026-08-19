@@ -24,39 +24,39 @@ const nodes = [
     subtitle: "Facts enter once.",
     icon: ClipboardList,
     summary:
-      "The intake form is the first control point. It turns a referral, sales conversation, or project idea into structured data that can be routed, checked, and monitored.",
+      "The intake form captures raw opportunity facts before a numbered CRM deal exists.",
     owner: "Sales / originating team",
     sections: [
       {
         title: "What The Form Captures",
         items: [
-          "Working project name or opportunity name, site address if known, utility, contact basics, and customer/host information.",
-          "Power user, referral partner, EPC path, system-owner path, buyer path, and current decision-maker when known or suspected.",
-          "Project type: PPA, cash, grant, roof, ground, carport, mixed, battery, no battery, or phased build.",
-          "Early technical facts: estimated system size, production, mounting type, battery status, utility/interconnection notes, and visible site constraints."
+          "Working name, site, utility, customer/host, contact, and source.",
+          "Power user, referral, EPC path, buyer/system-owner clues.",
+          "Project type, mounting, battery, size, production, and constraints."
         ]
       },
       {
         title: "Why It Exists",
         items: [
-          "It keeps the first project record from becoming scattered across Slack, Gmail, WhatsApp, portal messages, and memory.",
-          "It gives CRM enough structure to create the deal, assign or confirm the four-digit project number, and show what branch should move next.",
-          "Don’s automation is tied to this intake path, so agents can monitor the same structured starting point instead of chasing informal updates."
+          "Prevents the first facts from living only in Slack, Gmail, WhatsApp, or memory.",
+          "Gives CRM enough data to create the deal and assign the four-digit number.",
+          "Feeds Don’s automation from the same structured starting point."
         ]
       },
       {
-        title: "How It Routes Work",
+        title: "Branching",
         items: [
-          "PPA path opens buyer/system-owner and finance tracking.",
-          "Battery or storage path opens additional technical, utility, and design questions before handoff.",
-          "EPC path opens scope, pricing, agreement, procurement, schedule, and warranty tracking.",
-          "Missing information becomes a named CRM open item instead of disappearing."
+          "PPA opens buyer/system-owner and finance tracking.",
+          "Battery/storage opens utility, design, and technical questions.",
+          "EPC opens scope, pricing, agreement, procurement, and schedule."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "The intake step is done when the CRM deal can be created or updated, the project number can be assigned in CRM, the Drive folder can be created or linked, and the first known/missing answer set is visible."
+          "CRM deal can be created or updated.",
+          "Project number can be assigned in CRM.",
+          "Drive folder and first known/missing list can be created."
         ]
       }
     ],
@@ -69,38 +69,37 @@ const nodes = [
     subtitle: "Control record plus source files.",
     icon: Database,
     summary:
-      "CRM shows the current project truth. Drive holds the files that support it. Together, they should answer the top-level questions without requiring a search party.",
+      "CRM shows the current truth. Drive holds the files that prove it.",
     owner: "CRM owner / intake owner",
     sections: [
       {
         title: "CRM Must Show",
         items: [
-          "Deal name, CRM-assigned four-digit project number, stage, attention status, next action, next action date, blocker, and current owner.",
-          "Project Quick Reference: power user, referral partner, customer/host, EPC company/contact, system owner or buyer path, project size, production, mounting, battery, site address, and target completion.",
-          "Commercial facts that matter for the deal type: PPA rate, term, signature status, buyer status, CLA/draw path, financial model status, and open cash/model inputs.",
-          "A short note explaining what changed, what is still needed, and who owns it."
+          "Deal name, assigned number, stage, owner, next action, date, and blocker.",
+          "Quick Reference: people, EPC, owner/buyer path, size, mounting, battery, address, target date.",
+          "Deal facts: PPA, buyer, CLA/draw, model, cash inputs, and current note."
         ]
       },
       {
         title: "Drive Must Hold",
         items: [
-          "A standardized project folder created from or renamed to match the CRM deal name and assigned four-digit project number.",
-          "PPA, CLA/funding files, model, design/proposal, site documents, utility evidence, EPC agreement, signature packet, and closeout files.",
-          "Useful email, Slack, portal, and WhatsApp attachments saved into the right project folder when they become source material."
+          "Folder named to match the CRM deal and assigned number.",
+          "PPA, CLA/funding, model, proposal/design, site, utility, EPC, signatures, closeout.",
+          "Useful message attachments saved into the project folder."
         ]
       },
       {
         title: "Why The Quick Reference Matters",
         items: [
-          "It answers the questions Chris asks first: what kind of project, who is the system owner, who is the power user, who referred it, how big it is, what is missing, and who owns the next move.",
-          "It prevents contradictions between top-level fields, buried fields, notes, attachments, and message threads.",
-          "It gives both users and automation one place to verify the current answer."
+          "Answers the top questions first: type, size, owner, power user, referral, missing items.",
+          "Stops contradictions between fields, notes, files, and messages.",
+          "Gives users and automation one current answer."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "CRM and Drive are ready when the project can be reviewed from the deal page without rebuilding the facts from messages."
+          "The deal page can be reviewed without rebuilding the facts from messages."
         ]
       }
     ],
@@ -113,40 +112,37 @@ const nodes = [
     subtitle: "Ready for EPC / engineering.",
     icon: BadgeCheck,
     summary:
-      "This is the hard checkpoint before the project leaves CRM control and enters the EPC/engineering lane. It exists to stop messy handoffs from creating rework.",
+      "This is the hard checkpoint before CRM hands the project to EPC/engineering.",
     owner: "Nathan confirms the gate and handoff",
     sections: [
       {
         title: "Business Checklist",
         items: [
-          "CRM deal exists with the assigned four-digit project number and matching Drive folder.",
-          "Power user is identified or marked open with owner.",
-          "Customer/host and site address are identified or marked open with owner.",
-          "Referral partner/source is identified or marked none after review.",
-          "System owner or buyer path is identified, including backup buyer if known.",
-          "Project type is clear: PPA, cash, grant, battery, roof, ground, carport, mixed, or phased."
+          "CRM number and matching Drive folder exist.",
+          "Power user, customer/host, site, referral/source are known or assigned.",
+          "Buyer/system-owner path and project type are clear."
         ]
       },
       {
         title: "Technical Checklist",
         items: [
           "Current model/design basis is linked.",
-          "System size, annual production, mounting detail, panel/inverter assumptions, battery status, and utility/interconnection context are visible.",
-          "Known constraints are stated plainly: LUMA, PRIDCO, permitting, roof, structural, procurement, schedule, or access."
+          "Size, production, mounting, equipment, battery, utility context are visible.",
+          "Constraints are named: LUMA, PRIDCO, permit, roof, structural, procurement, access."
         ]
       },
       {
         title: "Commercial Checklist",
         items: [
-          "PPA status, rate, term, sent/executed/pending status, and signature owner are visible.",
-          "Financial path is clear: buyer, system owner, CLA, draw model, tax/entity documents, or cash requirements.",
-          "Open items are assigned to a person with a next action, not left as vague project noise."
+          "PPA status, rate, term, signature path, and signature owner are visible.",
+          "Financial path is clear: buyer, owner, CLA, draw model, tax/entity, cash.",
+          "Open items have owner, next action, and date."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "The project moves into EPC/engineering only when CRM Quick Reference, Drive source folder, assigned open items, and handoff note are complete enough for execution to start without going backward."
+          "Move only when Quick Reference, Drive, open items, and handoff note are ready."
         ]
       }
     ],
@@ -159,39 +155,37 @@ const nodes = [
     subtitle: "Execution lane in Zoho Projects.",
     icon: Wrench,
     summary:
-      "Zoho Projects starts here. This lane is for execution work, not front-end sales cleanup. The numbered project stays tied to the matching CRM deal and Drive folder.",
+      "Zoho Projects starts here. This lane is execution work, not sales cleanup.",
     owner: "EPC / engineering lead manages this lane",
     sections: [
       {
         title: "What Gets Accepted",
         items: [
-          "CRM handoff note, assigned project number, and current Project Quick Reference.",
+          "CRM handoff note, assigned number, and Quick Reference.",
           "Drive folder with current source files.",
-          "Known project size, mounting, production, customer/host, power user, EPC path, buyer/system-owner path, and open blockers.",
-          "Known commercial and technical assumptions that must be respected."
+          "Known assumptions, blockers, owner/buyer path, and EPC path."
         ]
       },
       {
         title: "What Happens Here",
         items: [
-          "EPC agreement comments, scope, pricing, inclusions/exclusions, warranty position, and schedule.",
-          "Engineering/design basis, model review, equipment path, panel/inverter assumptions, mounting and structural comfort.",
-          "Utility, LUMA, PRIDCO, interconnection, permitting, disconnects, site access, and approval status.",
-          "Procurement split, lead times, installer responsibility, stock assumptions, shipping, and build readiness."
+          "EPC agreement, scope, price, inclusions/exclusions, warranty, schedule.",
+          "Engineering/design basis, model, equipment path, mounting, structural comfort.",
+          "Utility/interconnection, permits, disconnects, procurement, lead times, build readiness."
         ]
       },
       {
         title: "How It Is Tracked",
         items: [
-          "After handoff, each numbered project in Zoho Projects uses the EPC/engineering structure and starts at the handoff point.",
-          "Tasks move through open, in progress, waiting, complete, or blocked status.",
-          "Delegation can happen inside the lane, but status must stay visible in Zoho Projects and tied back to CRM."
+          "Each numbered project starts at the EPC/engineering handoff point.",
+          "Tasks move open, in progress, waiting, blocked, complete.",
+          "Delegation can happen, but status stays visible and tied to CRM."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "The lane is complete when EPC/engineering can say what is ready, what is signed or priced, what is blocked, and what must return to CRM for final action."
+          "Complete when EPC/engineering can state ready, signed/priced, blocked, and next CRM action."
         ]
       }
     ],
@@ -204,32 +198,29 @@ const nodes = [
     subtitle: "Execution complete or blocked.",
     icon: ShieldCheck,
     summary:
-      "The return gate mirrors the handoff gate. The project comes back with enough information to close, escalate, or assign the final next move.",
+      "The project comes back with enough information to close, escalate, or assign the final move.",
     owner: "EPC / engineering lead returns to Nathan",
     sections: [
       {
         title: "Return Checklist",
         items: [
           "CRM-to-EPC handoff happened and is documented.",
-          "Handoff inputs were used, updated, or rejected with a reason.",
-          "EPC agreement, pricing, design basis, utility/permitting status, procurement, schedule, and warranty status are current.",
-          "Files created during EPC/engineering are in the correct Drive folder.",
-          "Unresolved items are assigned to the correct person with the actual next step."
+          "Handoff inputs were used, updated, or rejected with reason.",
+          "EPC, pricing, design, utility, permit, procurement, schedule, warranty are current."
         ]
       },
       {
         title: "Parallel Work Check",
         items: [
           "Buyer/system-owner path is current.",
-          "Financial model, CLA/draw/cash items, and tax/entity items are current.",
-          "Contract or signature path is current.",
-          "Outside communications that changed the deal are captured in CRM and Drive."
+          "Financial model, CLA/draw/cash, tax/entity items are current.",
+          "Contract/signature changes and outside messages are captured."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "Nathan can accept the project back when the execution lane and parallel branches are current enough to finalize CRM without another cleanup hunt."
+          "Accept back only when execution and parallel branches are current enough to finalize CRM."
         ]
       }
     ],
@@ -242,16 +233,15 @@ const nodes = [
     subtitle: "Final record and final next step.",
     icon: FileStack,
     summary:
-      "Closeout writes the final operating truth back into CRM. The project should be readable later without needing the people who worked it to explain what happened.",
+      "Closeout writes the final operating truth back into CRM.",
     owner: "Nathan",
     sections: [
       {
         title: "Final CRM Updates",
         items: [
-          "Deal stage, attention status, next action, due date, blocker, and owner are current.",
-          "Project Quick Reference reflects final known answers and does not conflict with fields below it.",
-          "Site address, customer/host, power user, referral partner, EPC, system owner/buyer, project size, mounting, production, battery, and target date are aligned.",
-          "Financial, legal, buyer, EPC, and source links are attached or referenced."
+          "Stage, attention status, next action, due date, blocker, owner are current.",
+          "Quick Reference matches the fields below it.",
+          "Financial, legal, buyer, EPC, and source links are attached."
         ]
       },
       {
@@ -259,13 +249,13 @@ const nodes = [
         items: [
           "Close it out if there are no further actions.",
           "Leave it open with a named owner and date if there is still a real next step.",
-          "Escalate it if the remaining blocker is outside the current owner’s lane."
+          "Escalate if the blocker is outside the current owner’s lane."
         ]
       },
       {
         title: "Exit Condition",
         items: [
-          "The project is complete when CRM shows the final status, Drive has the final files, and no hidden work is sitting in messages."
+          "Complete when CRM shows final status, Drive has final files, and no hidden work remains."
         ]
       }
     ],
@@ -279,41 +269,41 @@ const parallel = {
   subtitle: "Business work moving beside execution.",
   icon: GitBranch,
   summary:
-    "Parallel work is the buyer, finance, legal, contract, CLA, and source-control work that can move while EPC/engineering advances. It moves at the same time, but it stays visible in CRM.",
+    "Buyer, finance, legal, contract, CLA, and source-control work can move while EPC advances.",
   owner: "Assigned by branch",
   sections: [
     {
       title: "Buyer / System Owner",
       items: [
-        "Identify first outreach, backup buyer, system-owner candidate, and what package can be sent.",
-        "Update CRM when the buyer path changes so the project does not stall on old assumptions."
+        "Identify first outreach, backup buyer, owner candidate, and sendable package.",
+        "Update CRM when the buyer path changes."
       ]
     },
     {
       title: "Financials",
       items: [
-        "Keep model assumptions, PPA economics, CLA, draws, cash needs, tax/entity documents, and unresolved inputs visible.",
-        "Michael/Ricky work can continue while EPC moves, but open inputs stay named in CRM."
+        "Keep model, PPA economics, CLA, draws, cash needs, tax/entity visible.",
+        "Open inputs stay named in CRM while finance works."
       ]
     },
     {
       title: "Contracts / Legal",
       items: [
-        "Track signed PPA, land/site authorization, MNDA, EPC agreement, redlines, and signature status.",
-        "Do not treat a deal as ready if the controlling document is missing, stale, or unsigned."
+        "Track PPA, land/site auth, MNDA, EPC agreement, redlines, signatures.",
+        "Do not call ready if the controlling document is stale, missing, or unsigned."
       ]
     },
     {
       title: "Source Control",
       items: [
-        "Move useful email, Slack, portal, WhatsApp, and attachment evidence into Drive.",
-        "Summarize the actual business answer in CRM so nobody has to read the whole thread to know the status."
+        "Move useful email, Slack, portal, WhatsApp, and attachments into Drive.",
+        "Summarize the business answer in CRM."
       ]
     },
     {
       title: "Exit Condition",
       items: [
-        "Each parallel branch has one owner, one current next step, one visible status, and no contradiction with the CRM Quick Reference."
+        "Each branch has one owner, one next step, one status, and no CRM contradiction."
       ]
     }
   ],
